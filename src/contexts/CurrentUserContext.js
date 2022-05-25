@@ -15,7 +15,7 @@ export const CurrentUserProvider = ({children}) => {
 
     const handleMount = async () => {
       try {
-        const {data} = await axiosRes.get('dj-rest-auth/user/')
+        const {data} = await axiosRes.get('/dj-rest-auth/user/')
         setCurrentUser(data)
       } catch(err) {
         console.log(err)
@@ -46,7 +46,7 @@ export const CurrentUserProvider = ({children}) => {
           return Promise.reject(err)
         }
       )
-    })
+    }, [history])
 
     return (
         <CurrentUserContext.Provider value={currentUser}>
