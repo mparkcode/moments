@@ -1,4 +1,4 @@
-import { Container } from 'bootstrap-4-react/lib/components/layout'
+import Container from "react-bootstrap/Container";
 import React from 'react'
 import appStyles from '../../App.module.css'
 import Asset from '../../components/Asset'

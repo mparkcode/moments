@@ -20,7 +20,7 @@ import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useProfileData, useSetProfileData } from "../../contexts/ProfileDataContext";
 import { Image } from "react-bootstrap";
-import { Button } from 'bootstrap-4-react/lib/components'
+import Button from "react-bootstrap/Button";
 
 import NoResults from '../../assets/no-results.png'
 

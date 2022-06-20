@@ -12,7 +12,7 @@ import btnStyles from "../../styles/Button.module.css";
 import { Image } from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
-import { Alert } from "bootstrap-4-react/lib/components";
+import Alert from "react-bootstrap/Alert";
 
 function PostEditForm() {
 
