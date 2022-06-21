@@ -14,6 +14,7 @@ import Post from "./Post";
 import NoResults from '../../assets/no-results.png'
 import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 
@@ -21,6 +22,7 @@ function PostsPage({message, filter=""}) {
     const [posts, setPosts] = useState({results: []})
     const [hasLoaded, setHasLoaded] = useState(false)
     const {pathname} = useLocation();
+    const currentUser = useCurrentUser();
 
     const [query, setQuery] = useState("")
 
@@ -31,7 +33,7 @@ function PostsPage({message, filter=""}) {
                 setPosts(data)
                 setHasLoaded(true)
             } catch(err) {
-                console.log(err)
+                // console.log(err)
             }
         }
 
@@ -42,7 +44,7 @@ function PostsPage({message, filter=""}) {
         return () => {
             clearTimeout(timer)
         }
-    }, [filter, query, pathname])
+    }, [filter, query, pathname, currentUser])
   
   return (
     <Row className="h-100">
